@@ -69,11 +69,15 @@ const aliens = {
 }
 
 // basicall checking if my server is working 
-app.listen(
+/*app.listen(
    PORT,
   process.env.PORT,
     () => console.log(`im live at localhost ${PORT}`)
-)
+)*/
+
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`The server is running on port ${PORT}! You better go catch it!`)
+})
 
 app.get('/',  (res,req) => {
   res.sendFile(__dirname + 'index.html')

@@ -75,7 +75,7 @@ app.listen(
     () => console.log(`im live at localhost ${PORT}`)
 )
 
-app.get('/', () => (res,req) {
+app.get('/',  (res,req) => {
   res.sendFile(__dirname + 'index.html')
 })
 

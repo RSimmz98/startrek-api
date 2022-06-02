@@ -71,7 +71,7 @@ const aliens = {
 // basicall checking if my server is working 
 app.listen(
    PORT,
-  process.env.PORT,
+  process.env.PORT || 5000,
     () => console.log(`im live at localhost ${PORT}`)
 )
 

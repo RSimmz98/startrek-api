@@ -69,16 +69,14 @@ const aliens = {
 }
 
 // basicall checking if my server is working 
-/*app.listen(
+app.listen(
    PORT,
   process.env.PORT,
     () => console.log(`im live at localhost ${PORT}`)
-)*/
+)
 
-
-
-app.get('/',  function (res,req) {
-   res.sendFile(__dirname + '/index.html')
+app.get('/',  (res,req) => {
+  res.sendFile(__dirname + 'index.html')
 })
 
 app.get('/api/:alienName',(req,res) => {
@@ -88,10 +86,6 @@ app.get('/api/:alienName',(req,res) => {
   } else {
      res.json(aliens['humans'])
   }
-})
-
-app.listen(process.env.PORT || PORT, ()=>{
-    console.log(`The server is running on port ${PORT}! You better go catch it!`)
 })
 
 

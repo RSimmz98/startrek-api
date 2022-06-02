@@ -63,7 +63,7 @@ const aliens = {
         'homeworld': 'Trill',
         'features':'Outward appearance similar to humans, aside from distinct dark pigment marks running symmetrically down both sides of the face and body',
         'interestingFact': 'Some Trill are willin hosts to a long-lived invertibrate symbiote that merges with the host to create a distinct personality.' ,
-        'notableExamples' : "Jadzia Dax, Ezri Dax, Curzon Dax",
+         'notableExamples' : "Jadzia Dax, Ezri Dax, Curzon Dax",
         'image': 'https://static.wikia.nocookie.net/aliens/images/4/42/EzriDax.jpg'
     }
 }
@@ -89,3 +89,11 @@ app.get('/api/:alienName',(req,res) => {
 })
 
 
+/*pushing to heroku to make it accessible
+ heroku login -i
+heroku create simple-rap-api
+echo "web: node server.js" > Procfile
+git add . 
+git commit -m "changes"
+git push heroku main
+*/

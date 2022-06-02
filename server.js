@@ -1,13 +1,10 @@
-const express = require('express');
-const app = express();
-const cors = require('cors');
+const express = require('express')
+const app = express()
+const cors = require('cors')
 const PORT = 8000
 
 app.use(cors())
 
-
-// ima start with aliens sounds cool and weared Iknow
-// but feels good 
 const aliens = {
     'humans':{
         'speciesName' : 'Humans',
@@ -63,37 +60,24 @@ const aliens = {
         'homeworld': 'Trill',
         'features':'Outward appearance similar to humans, aside from distinct dark pigment marks running symmetrically down both sides of the face and body',
         'interestingFact': 'Some Trill are willin hosts to a long-lived invertibrate symbiote that merges with the host to create a distinct personality.' ,
-         'notableExamples' : "Jadzia Dax, Ezri Dax, Curzon Dax",
+        'notableExamples' : "Jadzia Dax, Ezri Dax, Curzon Dax",
         'image': 'https://static.wikia.nocookie.net/aliens/images/4/42/EzriDax.jpg'
     }
 }
 
-// basicall checking if my server is working 
-app.listen(
-   PORT,
-  process.env.PORT || 5000,
-    () => console.log(`im live at localhost ${PORT}`)
-)
-
-app.get('/',  (res,req) => {
-  res.sendFile(__dirname + 'index.html')
+app.get('/', (request, response)=>{
+    response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api/:alienName',(req,res) => {
-  const aliensName = req.params.alienName.toLowerCase()
-  if(aliens[aliensName]){
-    res.json(aliens[aliensName])
-  } else {
-     res.json(aliens['humans'])
-  }
+app.get('/api/:alienName', (request,response)=>{
+    const aliensName = request.params.alienName.toLowerCase()
+    if(aliens[aliensName]){
+        response.json(aliens[aliensName])
+    }else{
+        response.json(aliens['humans'])
+    }
 })
 
-
-/*pushing to heroku to make it accessible
- heroku login -i
-heroku create simple-rap-api
-echo "web: node server.js" > Procfile
-git add . 
-git commit -m "changes"
-git push heroku main
-*/
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`The server is running on port ${PORT}! You better go catch it!`)
+})

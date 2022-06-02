@@ -75,12 +75,10 @@ const aliens = {
     () => console.log(`im live at localhost ${PORT}`)
 )*/
 
-app.listen(process.env.PORT || PORT, ()=>{
-    console.log(`The server is running on port ${PORT}! You better go catch it!`)
-})
+
 
 app.get('/',  (res,req) => {
-  res.sendFile(__dirname + 'index.html')
+   res.sendFile(__dirname + '/index.html')
 })
 
 app.get('/api/:alienName',(req,res) => {
@@ -90,6 +88,10 @@ app.get('/api/:alienName',(req,res) => {
   } else {
      res.json(aliens['humans'])
   }
+})
+
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`The server is running on port ${PORT}! You better go catch it!`)
 })
 
 

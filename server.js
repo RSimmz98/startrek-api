@@ -77,7 +77,7 @@ const aliens = {
 
 
 
-app.get('/',  (res,req) => {
+app.get('/',  function (res,req) {
    res.sendFile(__dirname + '/index.html')
 })
 

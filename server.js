@@ -83,3 +83,12 @@ app.get('/api/:alienName', (req,res)=>{
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`The server is running on port ${PORT}! You better go catch it!`)
 })
+
+/*pushing to heroku to make it accessible
+ heroku login -i
+heroku create simple-rap-api
+echo "web: node server.js" > Procfile
+git add . 
+git commit -m "changes"
+git push heroku main
+*/

@@ -1,9 +1,8 @@
 # startrek-api
 <p>practicing creating apis</p> 
 
-#Tools used to check if its working
-
-<p>I used INSOMNIA to test if its working ..</p>
+#Tools used 
+<h6>Insomnia</h6>
 
 DEPLOYED TO HEROKU 
 
